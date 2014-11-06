@@ -35,14 +35,23 @@
     </script>
   </head>
   <body>
+    <style type="text/css">
+      .css-form input.ng-invalid.ng-dirty {
+        background-color: #FA787E;
+      }
+
+      .css-form input.ng-valid.ng-dirty {
+        background-color: #78FA89;
+      }
+    </style>
     <div class="jumbotron">
       <div class="row">
         <div class="col-sm-12">
           <h1>Bitcoin Investment Calculator</h1>
           <br><br>
-          <form role="form">
+          <form role="form" novalidate class="css-form">
             <label for="starting-investment">Initial Investment (USD)</label>
-            <input type="number" ng-model="initalAmt" class="form-control" placeholder="{{initalAmt}}">
+            <input required type="number" ng-model="initalAmt" class="form-control" placeholder="{{initalAmt}}">
           </form>
           <br>
           <p>Current Price (USD): <span class="number">{{currRate | currency }}</span></p>
