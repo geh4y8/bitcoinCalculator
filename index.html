@@ -25,6 +25,7 @@
           for(var i=0;i<data.length;i++){
             if (data[i].code == "USD"){
               $scope.currRate = data[i].rate;
+              break;
             }
           }
           $scope.initalAmt  = 5000;
